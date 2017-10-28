@@ -18,7 +18,5 @@ to launch the server application parallel to the MySQL database with respective 
 
 The Home page once launched will have the nav bars to access through the site.
 
+<Check>
 
-
-Sashidhar Donthiri
-sxd173730
