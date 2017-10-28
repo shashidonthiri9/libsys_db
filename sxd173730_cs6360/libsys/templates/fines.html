@@ -1,0 +1,309 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Search for a book here</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+
+<style> 
+body{
+  position: relative;
+}
+#Home {padding-top:50px; color:#fff; }
+</style>
+<body data-spy ="scroll" data-target=".navbar" data-offset="50">
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class= "navbar-toggle" data-toggle="collapse" data-target ="$myNavbar">
+        <span class= "icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><strong>UTDallas </strong></a>
+    </div>
+      <div>
+       <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav">
+      <li><a href="#Home">Home</a></li>
+      <li><a href="/fines" target="_blank">Manage Fines</a></li>
+      <li><a href="/checkInSearchPage"  target="_blank">Checkin page</a></li>
+      <li><a href="/manageBorrowers"  target="_blank">Manage Borrowers</a></li>
+      <li><a href="/searchPage"  target="_blank">Search for books</a></li>
+       </ul>
+  </div>
+</div>
+</div>
+</nav>
+<div id="Home" class="container-fluid">
+  <p></p>
+</div>
+
+
+
+
+    <script>
+        $("document").ready(function(){
+            
+            $('#calculatefines').click(function(e) {
+                
+                $.ajax({
+                    url : '/calculate_onclick',
+                    dataType: 'json',
+                    type: 'POST',
+                    success: function(response) {
+                        console.log("checking");
+                    },
+                    error: function(error) {
+                    console.log(error);
+                }
+                    });
+            });
+    }
+    );
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script>
+            $("document").ready(function(){
+
+            $('#calculate_fines_b').click(function(e) {
+
+                $.ajax({
+                    url : '/calculate_fines',
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function(response) {
+                    //console.log(response);
+                    //$("#results").text(response.result)
+                    $("#tableBody").empty();
+                    $.each(response, function(i,item){
+                        var newRow = "<tr><th>"+response[i].cardid+"</th><th>"+response[i].fineforThisCardID+"</th>"+"</tr>";
+                        $("#tableBody").append(newRow);
+                    });
+                },
+                    error: function(error) {
+                    console.log(error);
+                }
+                    });
+            });
+    }
+    );
+    </script>
+    <script>
+            $("document").ready(function(){
+            $('#displaypaidfines').click(function(e) {
+                $.ajax({
+                    url : '/display_paidfines',
+                    dataType: 'json',
+                    type: 'GET',
+                    success: function(response) {
+                    //console.log(response);
+                    //$("#results").text(response.result)
+                    $("#displaypaybody").empty();
+                    $.each(response, function(i,item){
+                        var newRow = "<tr><th>"+response[i].cardid+"</th><th>"+response[i].fineforThisCardID+"</th>"+"</tr>";
+                        $("#displaypaybody").append(newRow);
+                    });
+                },
+                    error: function(error) {
+                    console.log(error);
+                }
+                    });
+            });
+    }
+    );
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script>
+    $("document").ready(function(){
+         $('#displayfines').click(function(e) {
+            $.ajax({
+                url: '/displayfines?loan_ID='+ $("#loanIDsearch").val(),
+                dataType: 'json',
+                type: 'GET',
+                success: function(response) {
+                    //console.log(response);
+                    //$("#results").text(response.result)
+                    $("#displayBody").empty();
+                    $.each(response, function(i,item){
+                        var newRow = "<tr><td class=\"collapsing\"><div><input type=\"checkbox\"> <label></label></div></td><td>"+response[i].loanid+"</td><td>"+response[i].fineamount+"</td>"+"</tr>";
+                        $("#displayBody").append(newRow);
+                    });
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
+    </script>
+
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script>
+    $("document").ready(function(){
+         $('#displaypaidfines').click(function(e) {
+            $.ajax({
+                url: '/display_paidfines?loan_ID='+ $("#loanIDsearch").val(),
+                dataType: 'json',
+                type: 'GET',
+                success: function(response) {
+                    //console.log(response);
+                    //$("#results").text(response.result)
+                    $("#displaypaidBody").empty();
+                    $.each(response, function(i,item){
+                        var newRow = "<tr><td class=\"collapsing\"><div><input type=\"checkbox\"> <label></label></div></td><td>"+response[i].loanid+"</td><td>"+response[i].fineamount+"</td>"+"</tr>";
+                        $("#displaypaidBody").append(newRow);
+                    });
+                },
+                error: function(error) {
+                    console.log(error);
+                }
+            });
+        });
+    });
+    </script>
+   
+
+    <script>
+    $("document").ready(function(){
+        $("#paymentButton").click(function(e){
+            var selectedBooks = [];
+            var resultsTable = $("#displayBody").each(function(){
+                var currentRow = $(this);
+                var checked = currentRow.find('input:checkbox').is(':checked');
+                if(checked){
+                    var currentLoanID = $.trim(currentRow.find('td:eq(1)').html())
+                    selectedBooks.push(currentLoanID);
+                }
+            });
+             var tableControl= document.getElementById('searchTable');
+             var arrayOfValues = [];
+             //console.log(selectedBooks);
+            var postData = {};
+            postData.loan_ID = selectedBooks;
+            $.ajax({
+                url: "/payfines",
+                data: JSON.stringify(postData),
+                type: 'POST',
+                success: function(response){
+                    console.log(response);
+                },
+                error: function(response){
+                    console.log(response);
+                }
+            });
+  });
+    });
+
+
+    </script>
+
+</head>
+<body>
+<div class="container">
+
+    <p></p>
+    <div id="actions_1">
+        
+        <p></p>
+         <button type="button" id="calculate_fines_b" class="btn btn-default"><kbd>Display Fines</kbd></button>
+    </div>
+        <p></p>
+    <div id = "results">
+        <p></p>
+        <table class="ui compact celled definition table" id="searchTable">
+            <thead>
+                <tr>
+                    <th>CARDID</th>
+                    <th>FINE AMOUNT</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody">
+            </tbody>
+        </table>
+    </div>
+
+
+    <div id="actions_3">
+        <p></p> <br></br><p></p>
+         <button type="button" id="displaypaidfines" class="btn btn-default">Display Paid Fines</button>
+    </div>
+        <p></p>
+    <div id = "results_1">
+        <p></p>
+        <table class="ui compact celled definition table" id="payTable">
+            <thead>
+                <tr>
+                    <th>CARDID</th>
+                    <th>FINE AMOUNT</th>
+                </tr>
+            </thead>
+            <tbody id="displaypaybody">
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+
+
+    <div id="actions_2">
+    <form class="form-horizontal" action="/search">
+        <p></p>  <p></p><br></br> <br></br> <p></p> <br></br> <p></p>
+        <div class="form-group">
+            <label class="control-label col-sm-2">Search on Loan ID</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="loanIDsearch" placeholder="Search loans" name="keyword">
+            </div>
+        </div>
+        </form>
+
+         <button type="button" id="displayfines" class="btn btn-default">Pay fines</button>
+        <div id="payment_div">
+<p> </p>
+         <button type="button" id="paymentButton" class="btn btn-default">Pay</button>
+    </div>
+<p></p>
+    </div>
+    <div id = "displaydiv">
+        <table class="ui compact celled definition table" id="displaytable">
+            <p></p>
+            <p></p>
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>LOANID</th>
+                    <th>FINE AMOUNT</th>
+                </tr>
+            </thead>
+            <tbody id="displayBody">
+            </tbody>
+        </table>
+    </div>
+
+
+    <p></p>
+    <br></br>
+
+    
+</div>
+</body>
+</html>
