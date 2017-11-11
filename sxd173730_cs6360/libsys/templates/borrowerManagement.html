@@ -1,12 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Bootstrap Example</title>
+  <title>Manage Borrowers</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+    <meta charset="UTF-8">
+    <title>Search for a book here</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script
+      src="https://code.jquery.com/jquery-3.1.1.min.js"
+      integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+      crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+
+<style> 
+body{
+  position: relative;
+}
+#Home {padding-top:50px; color:#fff; }
+</style>
+<body data-spy ="scroll" data-target=".navbar" data-offset="50">
+
+
+<nav class="navbar navbar-inverse navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class= "navbar-toggle" data-toggle="collapse" data-target ="$myNavbar">
+        <span class= "icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#"><strong>UTDallas </strong></a>
+    </div>
+      <div>
+       <div class="collapse navbar-collapse" id="myNavbar">
+    <ul class="nav navbar-nav">
+      <li><a href="#Home">Home</a></li>
+      <li><a href="/fines" target="_blank">Manage Fines</a></li>
+      <li><a href="/checkInSearchPage"  target="_blank">Checkin page</a></li>
+      <li><a href="/manageBorrowers"  target="_blank">Manage Borrowers</a></li>
+      <li><a href="/searchPage"  target="_blank">Search for books</a></li>
+       </ul>
+  </div>
+</div>
+</div>
+</nav>
+<div id="Home" class="container-fluid">
+  <p></p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<style>
+body {
+    background-image: url("https://4.bp.blogspot.com/-X4eH4LnFO1k/VsP2n4VItoI/AAAAAAAAD5M/r5ti2qqlYpY/s1600/CommunityBorrowerPic2.jpg");
+}
+</style>
   <script>
       $(function() {
     $('#submitButton').click(function() {
@@ -31,60 +118,60 @@
 <body>
 
 <div class="container">
-  <h2>Horizontal form</h2>
+  <h2><kbd>Manage Borrowers</kbd></h2>
   <form class="form-horizontal" action="">
     <div class="form-group">
-      <label class="control-label col-sm-2" for="email">Email:</label>
+      <label class="control-label col-sm-2" for="email"><kbd>Email:</kbd></label>
       <div class="col-sm-10">
         <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for="ssn">SSN:</label>
+      <label class="control-label col-sm-2" for="ssn"><kbd>SSN:</kbd></label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="ssn" placeholder="Enter ssn" name="ssn">
       </div>
     </div>
 
     <div class="form-group">
-      <label class="control-label col-sm-2" for = "ssn">First Name:</label>
+      <label class="control-label col-sm-2" for = "ssn"><kbd>First Name:</kbd></label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="fname" placeholder="Enter FName" name="fname">
       </div>
     </div>
      <div class="form-group">
-      <label class="control-label col-sm-2" for = "ssn">Last Name:</label>
+      <label class="control-label col-sm-2" for = "ssn"><kbd>Last Name:</kbd></label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="lname" placeholder="Enter LName" name="lname">
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for = "ssn">Address:</label>
+      <label class="control-label col-sm-2" for = "ssn"><kbd>Address:</kbd></label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="address" placeholder="Enter Address here" name="address">
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for = "ssn">City:</label>
+      <label class="control-label col-sm-2" for = "ssn"><kbd>City:</kbd></label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="city" placeholder="Enter City here" name="city">
       </div>
     </div>
      <div class="form-group">
-      <label class="control-label col-sm-2" for = "ssn">Phone Number:</label>
+      <label class="control-label col-sm-2" for = "ssn"><kbd>Phone Number:</kbd></label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="phone" placeholder="Enter Phone Number" name="phone">
       </div>
     </div>
     <div class="form-group">
-      <label class="control-label col-sm-2" for = "ssn">State:</label>
+      <label class="control-label col-sm-2" for = "ssn"><kbd>State:</kbd></label>
       <div class="col-sm-10">
         <input type="text" class="form-control" id="state" placeholder="Enter State" name="state">
       </div>
     </div>
     <div class="form-group">
       <div class="col-sm-offset-2 col-sm-10">
-        <button type="submit" id = "submitButton" class="btn btn-default">Submit</button>
+        <button type="submit" id = "submitButton" class="btn btn-primary">Submit to add borrower</button>
       </div>
     </div>
   </form>

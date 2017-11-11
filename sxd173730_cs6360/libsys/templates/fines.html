@@ -17,6 +17,13 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
 
+<style type="text/css">
+	body{
+
+	background-image: url("http://complianceandethics.org/wp-content/uploads/2016/10/AdobeStock_66300110.jpg");
+	}
+</style>
+
 <style> 
 body{
   position: relative;
@@ -223,7 +230,7 @@ body{
     <div id="actions_1">
         
         <p></p>
-         <button type="button" id="calculate_fines_b" class="btn btn-default"><kbd>Display Fines</kbd></button>
+         <button type="button" id="calculate_fines_b" class="btn btn-primary"><kbd>Display Fines</kbd></button>
     </div>
         <p></p>
     <div id = "results">
@@ -232,7 +239,7 @@ body{
             <thead>
                 <tr>
                     <th>CARDID</th>
-                    <th>FINE AMOUNT</th>
+                    <th>FINE AMOUNT(in $)</th>
                 </tr>
             </thead>
             <tbody id="tableBody">
@@ -243,7 +250,7 @@ body{
 
     <div id="actions_3">
         <p></p> <br></br><p></p>
-         <button type="button" id="displaypaidfines" class="btn btn-default">Display Paid Fines</button>
+         <button type="button" id="displaypaidfines" class="btn btn-primary"><kbd>Display Paid Fines</kbd></button>
     </div>
         <p></p>
     <div id = "results_1">
@@ -252,7 +259,7 @@ body{
             <thead>
                 <tr>
                     <th>CARDID</th>
-                    <th>FINE AMOUNT</th>
+                    <th>FINE AMOUNT(in $)</th>
                 </tr>
             </thead>
             <tbody id="displaypaybody">
@@ -269,17 +276,17 @@ body{
     <form class="form-horizontal" action="/search">
         <p></p>  <p></p><br></br> <br></br> <p></p> <br></br> <p></p>
         <div class="form-group">
-            <label class="control-label col-sm-2">Search on Loan ID</label>
+            <label class="control-label col-sm-2"><kbd>Search on Loan ID</kbd></label>
             <div class="col-sm-10">
                 <input type="text" class="form-control" id="loanIDsearch" placeholder="Search loans" name="keyword">
             </div>
         </div>
         </form>
 
-         <button type="button" id="displayfines" class="btn btn-default">Pay fines</button>
+         <button type="button" id="displayfines" class="btn btn-primary " ><kbd>Pay fines</kbd></button>
         <div id="payment_div">
 <p> </p>
-         <button type="button" id="paymentButton" class="btn btn-default">Pay</button>
+         <button type="button" id="paymentButton" class="btn btn-primary"><kbd>Pay</kbd></button>
     </div>
 <p></p>
     </div>
@@ -291,7 +298,7 @@ body{
                 <tr>
                     <th></th>
                     <th>LOANID</th>
-                    <th>FINE AMOUNT</th>
+                    <th>FINE AMOUNT(in $)</th>
                 </tr>
             </thead>
             <tbody id="displayBody">
